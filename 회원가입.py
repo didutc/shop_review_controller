@@ -18,26 +18,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import random
 import string
-import pandas as pd
-import pyzard
-import selenium
-import time
-from selenium.webdriver.common.alert import Alert
-import time
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import subprocess
-import doubleagent
-from selenium.webdriver.support.select import Select
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.keys import Keys
-
-from selenium.webdriver.common.by import By
-import random
-import string
 
 
 # 영어 대소문자와 숫자를 포함한 모든 가능한 문자
