@@ -38,6 +38,17 @@ limit = input('몇명 작업할까요?')
 limit = int(limit)
 
 
+# 1부터 5까지의 숫자와 그에 해당하는 확률을 리스트로 지정
+numbers = [1, 2, 3, 4, 5]
+# 3020
+probabilities = [40*0.01, 20*0.01, 10*0.01, 5*0.01,25*0.01]  # 1이 30%, 2가 15%, 3, 4가 각각 10%, 5가 35%의 확률로 선택될 수 있도록 설정
+
+# random.choices() 함수를 사용하여 숫자를 생성
+generated_numbers = random.choices(numbers, weights=probabilities, k=limit)
+
+# 생성된 숫자 출력
+
+
 chrome_options = Options()
 chrome_options.add_experimental_option("debuggerAddress", "127.0.0.1:9222")
 
@@ -106,10 +117,14 @@ while True:
             dacounter1 = dacounter1+1
 
     time.sleep(3)
+    # 옵션 랜덤 구입 알고
     elem = driver.get(target)
+    item_pick = generated_numbers[0]
+    generated_numbers = generated_numbers[1:]
     while True:
         try:                   
-            elem = driver.find_element("xpath",'/html/body/div[2]/div[2]/div[3]/div[5]/div[1]/div[2]/div[2]/div[4]/div[2]/div/div[1]/table/tbody[2]/tr/td/ul/li[5]/a/span').click()
+            # SPAN 태그 선택
+            elem = driver.find_element("xpath",'/html/body/div[2]/div[2]/div[3]/div[5]/div[1]/div[2]/div[2]/div[4]/div[2]/div/div[1]/table/tbody[2]/tr/td/ul/li['+str(item_pick)+']/a/span').click()
 
             break
         except:

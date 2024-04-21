@@ -79,7 +79,7 @@ while True:
 
             break
         except:
-
+            pyzard.errorboy()
             time.sleep(2)
     while True:
         try:                   
@@ -87,7 +87,7 @@ while True:
 
             break
         except:
-
+            pyzard.errorboy()
             time.sleep(2)
 
     while True:
@@ -96,7 +96,7 @@ while True:
 
             break
         except:
-
+            pyzard.errorboy()
             time.sleep(2)
     da = Alert(driver)
     dacounter1 = 0
@@ -107,6 +107,7 @@ while True:
             da.accept()
             break
         except:
+            pyzard.errorboy()            
             time.sleep(1)
 
             break
@@ -118,7 +119,7 @@ while True:
 
             break
         except:
-
+            pyzard.errorboy()
             time.sleep(2)  
 
     document = driver.find_elements(By.TAG_NAME,'iframe')
@@ -131,7 +132,7 @@ while True:
 
             break
         except:
-
+            pyzard.errorboy()
             time.sleep(2)  
 
     driver.switch_to.default_content()
@@ -142,7 +143,7 @@ while True:
 
             break
         except:
-
+            pyzard.errorboy()
             time.sleep(2)  
 
 
