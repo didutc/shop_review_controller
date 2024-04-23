@@ -101,8 +101,16 @@ while True:
 
     #         pyzard.errorboy()
     #         time.sleep(2)
-    elem = driver.find_element("xpath",'/html/body/div[2]/div[2]/div[3]/div[5]/form/div/div/fieldset/div/div[3]/button').click()
 
+    while True:
+        try:
+            
+            elem = driver.find_element("xpath",'/html/body/div[2]/div[2]/div[3]/div[5]/form/div/div/fieldset/div/div[3]/button').click()
+
+        except:
+            
+            time.sleep(3)
+            break
     da = Alert(driver)
     dacounter1 = 0
     while True:
