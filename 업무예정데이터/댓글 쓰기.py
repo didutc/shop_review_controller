@@ -59,7 +59,7 @@ print(211)
 while True:
     df_from_excel = pd.read_csv(script_dir+'//댓글로그인.csv')
 
-    df_from_excel2 = pd.read_csv(script_dir+'//댓글컨텐츠.csv')
+    df_from_txt = pyzard.readfile(script_dir+'//댓글컨텐츠.txt')
     time.sleep(2)
     elem = driver.get("https://healthyflow.co.kr/exec/front/Member/logout")
     time.sleep(2)
@@ -69,7 +69,8 @@ while True:
     if len(triger) == 0:
         break
     login_lst = df_from_excel.values.tolist()[0]
-    comment_lst = df_from_excel2.values.tolist()[0]
+    df_from_txt =df_from_txt.split('\n')
+    comment_lst = df_from_txt[0].split('\t')
     print(login_lst)
     print(comment_lst)
 
@@ -144,6 +145,7 @@ while True:
 
 
     df_from_excel.drop(0,  inplace=True)
-    df_from_excel2.drop(0,  inplace=True)
+    df_from_txt=df_from_txt[1:]
+    df_from_txt ='\n'.join(df_from_txt)
     df_from_excel.to_csv(script_dir+'//댓글로그인.csv', index=False)
-    df_from_excel2.to_csv(script_dir+'//댓글컨텐츠.csv', index=False)
+    pyzard.report(script_dir+'//댓글컨텐츠.xlsx', df_from_txt)
